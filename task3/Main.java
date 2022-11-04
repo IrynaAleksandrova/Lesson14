@@ -1,5 +1,7 @@
 package task3;
 
+import java.util.InputMismatchException;
+
 public class Main {
     //    Создать обобщенный функциональный интерфейс. Написать класс с одним методом.
 //    В этом методе реализуйте логику:
@@ -9,7 +11,12 @@ public class Main {
     public static void main(String[] args) {
 
         Logic<Object> str = new Logic<>();
-        str.method("Hello, I'm Java Developer");
+
+        try {
+            str.method("Hello, I'm Java Developer");
+        } catch (InputMismatchException e) {
+            System.out.println("Entered not a number");
+        }
 
     }
 }
